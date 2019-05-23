@@ -31,9 +31,9 @@ class FeaturedAlbum extends Component {
                         <div className="featured_album_artist">3S Radio</div>
                         <div className="featured_album_title">Love is all Around</div>
                       </div>
-                      <div className="featured_album_link ml-auto"><a href="https://soundcloud.com/3si-radio" target="_blank">Visit Chanel</a></div>
+                      <div className="featured_album_link ml-auto"><a href="https://soundcloud.com/3si-radio" target="_blank" rel="noopener noreferrer">Visit Chanel</a></div>
                     </div>
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/359598259&color=%23648484&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <iframe title="soundCloud-frame" width="100%" height="450" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/359598259&color=%23648484&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                   </div>
                 </div>
               </div>

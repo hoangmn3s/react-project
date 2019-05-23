@@ -1,6 +1,45 @@
 import React, { Component } from 'react';
+import Event from './event/Event';
 class Show extends Component {
   render() {
+    var eventList = [
+      {
+        'eventId' : 0,
+        'eventDate' : '18/07',
+        'eventName' : 'Electric Castle Festival',
+        'eventLocation' : 'Cluj, Romania'
+      },
+      {
+        'eventId' : 1,
+        'eventDate' : '20/07',
+        'eventName' : 'Ultra Music Festival',
+        'eventLocation' : 'Miami, USA'
+      },
+      {
+        'eventId' : 2,
+        'eventDate' : '20/07',
+        'eventName' : 'Ultra Music Festival',
+        'eventLocation' : 'Miami, USA'
+      },
+      {
+        'eventId' : 3,
+        'eventDate' : '20/07',
+        'eventName' : 'Ultra Music Festival',
+        'eventLocation' : 'Miami, USA'
+      },
+      {
+        'eventId' : 4,
+        'eventDate' : '20/07',
+        'eventName' : 'Ultra Music Festival',
+        'eventLocation' : 'Miami, USA'
+      },
+      {
+        'eventId' : 5,
+        'eventDate' : '20/07',
+        'eventName' : 'Ultra Music Festival',
+        'eventLocation' : 'Miami, USA'
+      }
+    ];
     return (
     	<div className="shows">
           <div className="container">
@@ -18,59 +57,17 @@ class Show extends Component {
                 <div className="shows_list_container">
                   <ul className="shows_list">
                     {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">18/07</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Electric Castle Festival</a></div>
-                        <div className="show_location">Cluj, Romania</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
-                    {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">20/07</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Ultra Music Festival</a></div>
-                        <div className="show_location">Miami, USA</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
-                    {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">03/08</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Untold Festival</a></div>
-                        <div className="show_location">Cluj, Romania</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
-                    {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">11/08</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Sun Kissed Festival</a></div>
-                        <div className="show_location">Paris, France</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
-                    {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">18/08</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Spanish Festival</a></div>
-                        <div className="show_location">Madrid, Spain</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
-                    {/* Show */}
-                    <li className="d-flex flex-row align-items-center justify-content-start">
-                      <div><div className="show_date">25/08</div></div>
-                      <div className="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                        <div className="show_name"><a href="/#">Vikings Festival</a></div>
-                        <div className="show_location">Oslo, Norway</div>
-                      </div>
-                      <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
-                    </li>
+                    {eventList.map((eventObj,index) => {
+                      return(
+                        <Event 
+                          key={eventObj.eventId}
+                          eventId={eventObj.eventId}
+                          eventDate={eventObj.eventDate}
+                          eventName={eventObj.eventName}
+                          eventLocation={eventObj.eventLocation}
+                        />
+                        )
+                    })}
                   </ul>
                 </div>
               </div>
