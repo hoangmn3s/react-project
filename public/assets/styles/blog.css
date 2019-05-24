@@ -603,19 +603,19 @@ section
 5. Home
 *********************************/
 
-.home
+#news .home
 {
 	width: 100%;
 	height: 384px;
 	padding-left: 51px;
 	padding-right: 52px;
 }
-.home_inner
+#news .home_inner
 {
 	width: 100%;
 	height: 100%;
 }
-.home_container
+#news .home_container
 {
 	position: absolute;
 	left: 50%;
@@ -626,12 +626,12 @@ section
 	transform: translateX(-50%);
 	bottom: 89px;
 }
-.home_subtitle
+#news .home_subtitle
 {
 	font-size: 18px;
 	line-height: 0.75;
 }
-.home_title
+#news .home_title
 {
 	font-size: 82px;
 	line-height: 0.75;

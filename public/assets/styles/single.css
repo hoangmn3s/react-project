@@ -603,19 +603,19 @@ section
 5. Home
 *********************************/
 
-.home
+#music .home
 {
 	width: 100%;
 	height: 384px;
 	padding-left: 51px;
 	padding-right: 52px;
 }
-.home_inner
+#music .home_inner
 {
 	width: 100%;
 	height: 100%;
 }
-.home_container
+#music .home_container
 {
 	position: absolute;
 	left: 50%;
@@ -626,12 +626,12 @@ section
 	transform: translateX(-50%);
 	bottom: 89px;
 }
-.home_subtitle
+#music .home_subtitle
 {
 	font-size: 18px;
 	line-height: 0.75;
 }
-.home_title
+#music .home_title
 {
 	font-size: 82px;
 	line-height: 0.75;

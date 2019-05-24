@@ -7,13 +7,13 @@ import Extra from './layouts/Extra';
 class Home extends Component {
   render() {
     return (
-    	<div>
+    	<div id="home-section">
 	        <Slide />
 	        <FeaturedAlbum />
 	        <Show />
 	        <Artist />
 	        <Extra />
-        </div>
+      </div>
     )
   }
 }

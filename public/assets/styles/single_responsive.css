@@ -186,7 +186,7 @@
 
 @media only screen and (max-width: 767px)
 {
-	.home_title
+	#music .home_title
 	{
 		font-size: 56px;
 	}
@@ -210,7 +210,7 @@
 	{
 		font-size: 36px;
 	}
-	.home
+	#music .home
 	{
 		height: 345px;
 		padding-left: 15px;
@@ -225,11 +225,11 @@
 	{
 		left: 15px;
 	}
-	.home_container
+	#music .home_container
 	{
 		bottom: 71px;
 	}
-	.home_title
+	#music .home_title
 	{
 		font-size: 36px;
 	}

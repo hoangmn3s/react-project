@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  Link,
+
+} from 'react-router-dom';
 class Menu extends Component {
   render() {
     return (
@@ -8,17 +12,19 @@ class Menu extends Component {
             <div className="menu_container d-flex flex-column align-items-start justify-content-center">
               <div className="menu_log_reg">
                 <ul className="d-flex flex-row align-items-start justify-content-start">
-                  <li><a href="/#">Login</a></li>
-                  <li><a href="/#">Register</a></li>
+                  <li><Link to="/login">Login</Link></li>
+                  <li><Link to="/register">Register</Link></li>
                 </ul>
               </div>
               <nav className="menu_nav">
                 <ul className="d-flex flex-column align-items-start justify-content-start">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About us</a></li>
-                  <li><a href="music.html">Music</a></li>
-                  <li><a href="blog.html">News</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li className="active">
+                   <Link to="/home">Home</Link>
+                </li>
+                <li><Link to="/about">About us</Link></li>
+                <li><Link to="/music">Music</Link></li>
+                <li><Link to="/news">News</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
                 </ul>
               </nav>
             </div>
