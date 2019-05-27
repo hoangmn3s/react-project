@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Event from './event/Event';
-class Show extends Component {
+class EventList extends Component {
   render() {
     var eventList = [
       {
@@ -81,8 +81,8 @@ class Show extends Component {
             </div>
           </div>
         </div>
-    	   	);
+    );
   }
 }
 
-export default Show;
+export default EventList;

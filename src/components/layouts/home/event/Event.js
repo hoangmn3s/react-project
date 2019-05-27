@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 class Event extends Component {
+
+  // constructor(props){
+  //   super(props);
+  //   this.eventRedirect =  this.eventRedirect.bind(this);
+  // }
+
+  // eventRedirect(){
+  //   console.log(this.props.eventName);
+  // }
+  eventRedirect = () => {
+    console.log(this.props.eventName);
+  }
+
   render() {
     return (
     	<li className="d-flex flex-row align-items-center justify-content-start" >
@@ -8,9 +21,13 @@ class Event extends Component {
             <div className="show_name"><a href="/#">{this.props.eventName}</a></div>
             <div className="show_location">{this.props.eventLocation}</div>
           </div>
-          <div className="ml-auto"><div className="show_shop trans_200"><a href="/#">Buy Tickets</a></div></div>
+          <div className="ml-auto">
+            <div className="show_shop trans_200">
+              <a href="/#" onClick={ this.eventRedirect }  >Buy Tickets</a>
+            </div>
+          </div>
         </li>
-);
+    );
   }
 }
 
