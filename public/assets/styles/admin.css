@@ -1,0 +1,9 @@
+#admin-user{
+	padding:50px;
+}
+.table-bordered, tr, th, td{
+	border : 1px solid #DE4F32;
+}
+thead{
+	background-color : #DE4F32;
+}
