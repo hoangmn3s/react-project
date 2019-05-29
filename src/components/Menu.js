@@ -6,7 +6,7 @@ import {
 class Menu extends Component {
   render() {
     return (
-<div className="menu">
+      <div className="menu">
           <div>
             <div className="menu_overlay" />
             <div className="menu_container d-flex flex-column align-items-start justify-content-center">

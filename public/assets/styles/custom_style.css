@@ -1,12 +1,37 @@
 .home-banner{
 	background-image: url("assets/images/index.jpg");
 }
-
+section{
+	padding-top:100px;
+}
+section .home_container{
+	bottom: 0!important;
+}
 /*Hoang.mn Customize*/
 #about-banner{
 	background-image: url("/assets/images/about.jpg");
 	background-position: center;
 }
+/*#music-banner{
+	background-image: url("/assets/images/single.jpg");
+	background-position: center;
+}*/
 #artist-background{
 	background-image: url("/assets/images/artist_2.jpg");
 }
+.single{
+	padding-top: 20px!important;
+}
+.singer-list{
+	padding-bottom: 20px;
+	text-align: center;
+	 
+}
+.singer-list img{
+	  width: 50%;
+	transition: transform .6s;
+  
+}
+.singer-list img:hover , .singer-list .active{
+    transform: scale(1.2);
+  }
