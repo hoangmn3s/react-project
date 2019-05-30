@@ -8,10 +8,10 @@ class Home extends Component {
   render() {
     return (
     	<div id="home-section">
-	        <Slide />
+	        <Slide cover={this.props.cover} />
 	        <FeaturedAlbum />
-	        <EventList />
-	        <Artist />
+	        <EventList eventList={this.props.showList} />
+	        <Artist artist={this.props.artist} />
 	        <Extra />
       </div>
     )

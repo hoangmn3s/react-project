@@ -43,8 +43,8 @@ class User extends Component {
     };
   }
   changeState = () => {
-    var userIndex = this.refs.status.getAttribute("data-index");
-    var userStatus = this.refs.status.getAttribute("data-status");
+    // var userIndex = this.refs.status.getAttribute("data-index");
+    // var userStatus = this.refs.status.getAttribute("data-status");
       this.setState({
         userList : [
         {

@@ -28,10 +28,34 @@ section .home_container{
 	 
 }
 .singer-list img{
-	  width: 50%;
+	 width: 50%;
 	transition: transform .6s;
   
 }
 .singer-list img:hover , .singer-list .active{
     transform: scale(1.2);
-  }
+ }
+.active-media{
+	transition: 0.2s;
+    background-color: #DE4F32;
+transform: scale(1.02);
+}
+.single_player_container {
+	background-color: #F1F3F4;
+	left : 0px;
+	width: 100%;
+	margin-bottom: 0px!important;
+}
+.single_player_container audio{
+	width: 100%;
+}
+.logo_list{
+	font-size: 30px;
+	margin-top: 30px;
+}
+.logo_list div a{
+	color: #999999;
+}
+.logo_list div a:hover{
+	color: #DE4F32;
+}

@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 
 class News extends Component {
+    showCover(fileName){
+    var coverImg = "/assets/images/" + fileName;
+    return {
+      backgroundImage: "url(" + coverImg + ")",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }
+  }
   render() {
     return (
       <section id="news">
         <div className="home">
           <div className="home_inner">
             {/* Image artist: https://unsplash.com/@yoannboyer */}
-            <div className="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/images/blog.jpg" data-speed="0.8" />
+            <div className="parallax_background parallax-window" data-parallax="scroll" style={ this.showCover(this.props.cover) } data-speed="0.8" />
             <div className="home_container">
               <div className="home_content text-center">
                 <div className="home_subtitle">Just us</div>

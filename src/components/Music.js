@@ -6,16 +6,30 @@ class Music extends Component {
   constructor(props){
     super(props);
     this.state = {
-          singer : {
+          singer :{
             "id" : 1,
-            "name" : "Trinh Trung Kien",
-            "date_of_birth" : "1995",
+            "name" : "DSK",
+            "real_name" : "Trần Đức Minh",
+            "date_of_birth" : "23.11.1987",
             "contact" : "trungkien@gmail.com",
-            "detail" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            "image" : "single_image.jpg",
-            "cover" : "single.jpg",
+            "detail" : "DSK được cho là thần tượng của các thần tượng trong Rap Việt nhờ chất giọng và khả năng viết lyric tuyệt hảo. Anh được khán giả yêu mến qua những bản Rap chất ngầu như: Lớn Rồi, Chưa Bao Giờ, Đôi Bờ, Tự Xử, Thế Hệ Tao,... Cho đến bây giờ anh đã trở thành huyền thoại bất tử trong lòng người hâm mộ với những cống hiến to lớn cho nền Rap Việt Nam.",
+            "image" : "dsk.png",
+            "cover" : "dsk_cover.jpg",
+            "type" : "Diss, Live",
             "songlist" : [
-              'TBEKB','CG','TK21B'
+              {
+                "id" : 1,
+                "name" : "Chưa Bao Giờ",
+                "file_name" : "chuabaogio.mp3"
+              }, {
+                "id" : 2,
+                "name" : "Lớn Rồi",
+                "file_name" : "lonroi.mp3",
+              },{
+                "id" : 3,
+                "name" : "Biết Rõ Vẫn Khó Đi",
+                "file_name" : "bietrovankhodi.mp3"
+              }
             ]
           }
         }
@@ -24,12 +38,25 @@ class Music extends Component {
   setActiveSinger(singerObj){
     this.setState({singer : singerObj});
   }
+  showCover(fileName){
+    // console.log(fileName);
+    var coverImg = "/assets/images/" + fileName;
+    return {
+      backgroundImage: "url(" + coverImg + ")",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }
+  }
+
   render() {
     return (
       <section id="music">
       <div className="home">
           <div className="home_inner">
-            <div id="music-banner" className="parallax_background parallax-window" data-image-src={"/assets/images/" + this.state.singer.cover} data-parallax="scroll" data-speed="0.8" />
+
+            <div id="music-banner" className="parallax_background parallax-window" style={ this.showCover(this.state.singer.cover) } /*data-image-src={"/assets/images/" + this.state.singer.cover}*/ data-parallax="scroll" data-speed="0.8" />
+
           </div>
         </div>
         {/* Single */}
@@ -39,18 +66,7 @@ class Music extends Component {
             <SingerDetail activeSinger={this.state.singer}/>
           </div>
         </div>
-        {/* Video */}
-        <div className="video">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="video_container">
-                  <iframe title="youtube iframe" width="100%" height="300px" src="https://www.youtube.com/embed/OsKLytDnKGA?rel=0&showinfo=0" frameBorder={0} allow="autoplay; encrypted-media" allowFullScreen />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </section>
     )
   }

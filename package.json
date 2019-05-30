@@ -9,7 +9,9 @@
     "i": "^0.3.6",
     "npm": "^6.9.0",
     "react": "^16.8.6",
+    "react-audio-player": "^0.11.1",
     "react-dom": "^16.8.6",
+    "react-media-player": "^0.7.7",
     "react-router": "^4.4.0-beta.8",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
@@ -28,5 +30,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-hot-loader": "^4.5.3"
+  }
 }

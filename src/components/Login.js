@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import {
-  Redirect
-} from 'react-router-dom';
 
 import Home from './Home';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+  Route} from 'react-router-dom';
 
   function homeRoute() {
     return <Home />
@@ -18,7 +12,6 @@ class Login extends Component {
 
 	submitLogin = () => {
 		const STATUS_ACTIVE = 1;
-		const STATUS_INACTIVE = 3;
 		const LOGIN_SUCCESS = 200;
 		const LOGIN_INACTIVE_USER = 201;
 		const LOGIN_WRONG_PASSWORD = 202;
