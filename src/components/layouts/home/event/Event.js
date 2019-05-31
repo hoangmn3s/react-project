@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 class Event extends Component {
 
-  // constructor(props){
-  //   super(props);
-  //   this.eventRedirect =  this.eventRedirect.bind(this);
-  // }
-
-  // eventRedirect(){
-  //   console.log(this.props.eventName);
-  // }
   eventRedirect = () => {
     console.log(this.props.eventName);
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 class Artist extends Component {
   render() {
     var artist = this.props.artist;
-    console.log(artist);
     return (
 		<div className="artist">
           <div className="container">

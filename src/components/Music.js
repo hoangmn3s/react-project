@@ -62,8 +62,8 @@ class Music extends Component {
         {/* Single */}
         <div className="single">
           <div className="container">
-            <SingerPicker getActiveSinger={ this.setActiveSinger } />
-            <SingerDetail activeSinger={this.state.singer}/>
+            <SingerPicker singerList={this.props.singerList} getActiveSinger={ this.setActiveSinger } />
+            <SingerDetail defaultSinger={this.props.singerList[0]} activeSinger={this.state.singer}/>
           </div>
         </div>
        

@@ -11,84 +11,23 @@ import Footer from './components/Footer';
 //Admin
 import Login from './components/Login';
 import AdminUser from './components/Admin/User';
+
+/*Fake Data - Start*/
+import * as ShowModel from './Models/ShowModel';
+import * as SingerModel from './Models/SingerModel';
+import * as NewsModel from './Models/NewsModel';
+/*Fake Data - End*/
+
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 
 class App extends Component {
+
  constructor(props){
     super(props);
     this.state = {
-      home : {
-          "cover" : [
-            'index.jpg','contact.jpg','datmaniac_cover.jpg'
-          ],
-          "eventList" :[
-          {
-            'eventId' : 0,
-            'eventDate' : '18/07',
-            'eventName' : 'Thơm',
-            'eventLocation' : 'Đen, Ngọt, The Flob...'
-          },
-          {
-            'eventId' : 1,
-            'eventDate' : '20/07',
-            'eventName' : 'Tôi Detail Tôi',
-            'eventLocation' : 'Kiên'
-          },
-          {
-            'eventId' : 2,
-            'eventDate' : '20/07',
-            'eventName' : 'Nhạc phiễn phí VOL.3',
-            'eventLocation' : 'DSK'
-          },
-          {
-            'eventId' : 3,
-            'eventDate' : '20/07',
-            'eventName' : 'Điện Tử Thẻ và Truyện Tranh',
-            'eventLocation' : 'Ếch & Báo'
-          },
-          {
-            'eventId' : 4,
-            'eventDate' : '20/07',
-            'eventName' : 'Rap Ngoài Đường',
-            'eventLocation' : 'Datmaniac, Cam'
-          },
-          {
-            'eventId' : 5,
-            'eventDate' : '20/07',
-            'eventName' : 'Thần Tượng Trên tầng Thượng',
-            'eventLocation' : 'Taynguyen Sound'
-          }
-        ],
-        artist : {
-            "id" : 1,
-            "name" : "DSK",
-            "real_name" : "Trần Đức Minh",
-            "date_of_birth" : "23.11.1987",
-            "contact" : "trungkien@gmail.com",
-            "detail" : "DSK được cho là thần tượng của các thần tượng trong Rap Việt nhờ chất giọng và khả năng viết lyric tuyệt hảo. Anh được khán giả yêu mến qua những bản Rap chất ngầu như: Lớn Rồi, Chưa Bao Giờ, Đôi Bờ, Tự Xử, Thế Hệ Tao,... Cho đến bây giờ anh đã trở thành huyền thoại bất tử trong lòng người hâm mộ với những cống hiến to lớn cho nền Rap Việt Nam.",
-            "image" : "dsk.png",
-            "cover" : "dsk_cover.jpg",
-            "type" : "Diss, Live",
-            "songlist" : [
-              {
-                "id" : 1,
-                "name" : "Chưa Bao Giờ",
-                "file_name" : "chuabaogio.mp3"
-              }, {
-                "id" : 2,
-                "name" : "Lớn Rồi",
-                "file_name" : "lonroi.mp3",
-              },{
-                "id" : 3,
-                "name" : "Biết Rõ Vẫn Khó Đi",
-                "file_name" : "bietrovankhodi.mp3"
-              }
-            ]
-          }
-      },
       about : {
           "cover" : "about.jpg"
       },
@@ -112,9 +51,9 @@ class App extends Component {
         <Header headerType="public" routePath="/home" />
         <Menu  menuType="public"/>
         <Home  
-          cover={this.state.home.cover} 
-          showList={this.state.home.eventList}
-          artist={this.state.home.artist}
+          cover={NewsModel.HOTEST_NEWS} 
+          showList={ShowModel.SHOW_LIST}
+          artist={SingerModel.WEEK_SINGER}
         />
         <Footer />
       </div>
@@ -135,7 +74,7 @@ class App extends Component {
       <div className="super_container">
         <Header headerType="public" routePath="/music" />
         <Menu  menuType="public"/>
-        <Music />
+        <Music singerList={SingerModel.SINGER_LIST} />
         <Footer />
       </div>
     )

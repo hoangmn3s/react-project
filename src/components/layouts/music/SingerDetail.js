@@ -4,12 +4,10 @@ import MediaPicker from './MediaPicker';
 class SingerDetail extends Component {
   constructor(props){
     super(props);
+    var defaultSinger = this.props.defaultSinger;
+    var defaultSong = defaultSinger.songlist[0]
     this.state = {
-          song : {
-                "id" : 1,
-                "name" : "Chưa Bao Giờ",
-                "file_name" : "chuabaogio.mp3"
-              }
+          song : defaultSong
         }
     this.setActiveMedia =  this.setActiveMedia.bind(this);
     }
@@ -19,7 +17,6 @@ class SingerDetail extends Component {
 
   render() {
     return (
-
       <div className="row">
               <div className="col-lg-5">
                 <div className="single_info">
