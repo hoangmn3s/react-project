@@ -20,7 +20,7 @@ class EventList extends Component {
             <div className="row" style={{zIndex: 10}}>
               <div className="col">
                 <div className="section_title_container">
-                  <div className="section_subtitle">Events</div>
+                  <div className="section_subtitle"></div>
                   <div className="section_title"><h1>Upcoming Shows</h1></div>
                 </div>
               </div>

@@ -16,6 +16,7 @@ import AdminUser from './components/Admin/User';
 import * as ShowModel from './Models/ShowModel';
 import * as SingerModel from './Models/SingerModel';
 import * as NewsModel from './Models/NewsModel';
+import * as UserModel from './Models/UserModel';
 /*Fake Data - End*/
 
 import {
@@ -27,15 +28,7 @@ class App extends Component {
 
  constructor(props){
     super(props);
-    this.state = {
-      about : {
-          "cover" : "about.jpg"
-      },
-      news: {
-          "cover" : "single.jpg"
-      },
-      contact: {}
-    }
+  
     this.homeRoute = this.homeRoute.bind(this);
     this.aboutRoute = this.aboutRoute.bind(this);
     this.musicRoute = this.musicRoute.bind(this);
@@ -43,6 +36,20 @@ class App extends Component {
     this.contactRoute = this.contactRoute.bind(this);
     this.loginRoute = this.loginRoute.bind(this);
     this.adminUserRoute = this.adminUserRoute.bind(this);
+
+    var userList = UserModel.USER_LIST;
+    userList.map((user,index) => {
+      user.id = this.generateId();
+    })
+    if(localStorage.getItem('userList') === null){
+      localStorage.setItem('userList', JSON.stringify(userList));
+    }
+  }
+  s4(){
+    return Math.floor((1+Math.random()) * 0x10000).toString(16).substring(1);
+  }
+  generateId(){
+    return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + '-' + this.s4();
   }
 
   homeRoute(){
@@ -64,7 +71,7 @@ class App extends Component {
       <div className="super_container">
         <Header headerType="public" routePath="/about" />
         <Menu  menuType="public"/>
-        <About  cover={this.state.about.cover} />
+        <About  cover="about.jpg" />
         <Footer />
       </div>
      )
@@ -84,7 +91,7 @@ class App extends Component {
       <div className="super_container">
         <Header headerType="public" routePath="/news" />
         <Menu  menuType="public"/>
-        <News cover={this.state.news.cover} />
+        <News cover="single.jpg" />
         <Footer />
     </div>
     )
@@ -114,7 +121,7 @@ class App extends Component {
       <div className="super_container">
         <Header headerType="admin" routePath="/admin/user" />
         <Menu  menuType="admin"/>
-        <AdminUser />
+        <AdminUser/>
         <Footer />
       </div>
      )
