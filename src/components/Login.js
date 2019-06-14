@@ -1,100 +1,69 @@
 import React, { Component } from 'react';
 
 import Home from './Home';
+import LoginForm from './layouts/LoginForm';
 import {
-  Route} from 'react-router-dom';
+  Route, Redirect} from 'react-router-dom';
+  import { hashHistory } from 'react-router'
 
-  function homeRoute() {
-    return <Home />
-  }
+
 
 class Login extends Component {
 
-	submitLogin = () => {
-		const STATUS_ACTIVE = 1;
-		const LOGIN_SUCCESS = 200;
-		const LOGIN_INACTIVE_USER = 201;
-		const LOGIN_WRONG_PASSWORD = 202;
-		const LOGIN_DO_NOT_EXIST = 203;
-		var userList = [
-			{
-				'id' : 1,
-				'username' : 'admin',
-				'password' : '123456',
-				'role_id' : 1,
-				'status' : 1
-			},
-			{
-				'id' : 2,
-				'username' : 'hoangmn',
-				'password' : '123456',
-				'role_id' : 2,
-				'status' : 1
-			},
-			{
-				'id' : 3,
-				'username' : 'user01',
-				'password' : '123456',
-				'role_id' : 2,
-				'status' : 3
-			},
-			{
-				'id' : 4,
-				'username' : 'user02',
-				'password' : '123456',
-				'role_id' : 3,
-				'status' : 1
-			}
-		];
-		var username = this.refs.username.value;
-		var password = this.refs.password.value;
-        var loginStatus = null;
-		for (var i = 0; i < userList.length; i++) {
-			var userObj = userList[i];
-		  if(userObj.username === username){
-            	if(userObj.password === password){
-            		if(userObj.status === STATUS_ACTIVE){
-            			loginStatus =  LOGIN_SUCCESS; //login Succes;
-            		}
-            		else{
-            			loginStatus =  LOGIN_INACTIVE_USER; // inactive user;
-            		}
-            		break;
-            	}else{
-            		loginStatus = LOGIN_WRONG_PASSWORD; //wrong pasword
-            		break;
-            	}
-            }else{
-            	loginStatus = LOGIN_DO_NOT_EXIST ; // Do not exist
-            	break;
-            }
+	
+	constructor(props){
+		super(props);
+		this.state = {
+			userList : []
 		}
-		if(loginStatus  === LOGIN_SUCCESS){
+		this.loginAuth = this.loginAuth.bind(this);
+	}
+	componentWillMount(){
 
-			return (<Route path="/home" component= { homeRoute } />)
+	    if(localStorage && localStorage.getItem('userList')){
+	      var userList = JSON.parse(localStorage.getItem('userList'));
+	      this.setState({
+	        userList : userList
+	      })
+	      localStorage.setItem('userList',JSON.stringify(userList));
+	    }
+  	}
+
+
+	onSubmitLogin = (loginUser) => {
+		var { userList } = this.state;
+		console.log(userList);
+		var loginAuth = this.loginAuth(loginUser);
+		if(loginAuth){
+			console.log('redirect');
+			// window.location.replace("/admin/user");
+
+			hashHistory.push('/registrationStep2')
+
+			{/*return <Redirect to='/admin/user' />*/}
 		}
-		console.log(loginStatus);
+
+	}
+	loginAuth(loginUser){
+    	var { userList } = this.state;
+    	var loginAuth = false;
+    	userList.forEach((userObj,index) => {
+    		if(loginAuth === false){
+    			if(userObj.username === loginUser.username &&  userObj.password === loginUser.password ){
+        		loginAuth = true; 
+      			}
+      		}
+    		});
+    	return loginAuth;
 	}
 
+	
 	render() {
 		return (
 			<section id="login">
 				<div className="contact">
 					<div className="container">
-						<div className="row">
-							<div className="col-lg-3"></div>
-							<div className="col-lg-6">
-								<div className="contact_form_container">
-									<div className="contact_title">Login</div>
-									<form action="#" className="contact_form" id="contact_form">
-									<input type="text" className="contact_input" placeholder="Username" required="required" ref="username" />
-									<input type="password" className="contact_input" placeholder="Password" required="required" ref="password" />
-									<button className="contact_button" onClick={ this.submitLogin } >Login</button>
-									</form>
-								</div>
-							</div>
-							<div className="col-lg-3"></div>
-						</div>
+						<LoginForm onSubmitLogin={this.onSubmitLogin} />
 					</div>
 				</div>
 			</section>
