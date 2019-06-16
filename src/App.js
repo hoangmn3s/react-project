@@ -28,14 +28,6 @@ class App extends Component {
 
  constructor(props){
     super(props);
-  
-    this.homeRoute = this.homeRoute.bind(this);
-    this.aboutRoute = this.aboutRoute.bind(this);
-    this.musicRoute = this.musicRoute.bind(this);
-    this.newsRoute = this.newsRoute.bind(this);
-    this.contactRoute = this.contactRoute.bind(this);
-    this.loginRoute = this.loginRoute.bind(this);
-    this.adminUserRoute = this.adminUserRoute.bind(this);
 
     var userList = UserModel.USER_LIST;
     userList.map((user,index) => {
@@ -129,8 +121,9 @@ class App extends Component {
 
   render() {
     return (
+      //Router get Component
       <Router>
-          <Route path="/home" component= { this.homeRoute } />
+          <Route exact path="/" component= { this.homeRoute } />
           <Route path="/about" component= {this.aboutRoute} />
           <Route path="/music" component= {this.musicRoute} />
           <Route path="/news" component= {this.newsRoute} />

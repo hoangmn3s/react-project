@@ -23,11 +23,9 @@ class LoginForm extends Component {
     this.setState({
       [formName] : value
     })
-    // console.log(this.state);
   }
 	onSubmitLogin(event){
     event.preventDefault();
-    // console.log(this.state);
     this.props.onSubmitLogin(this.state);
 
   }
@@ -40,10 +38,10 @@ class LoginForm extends Component {
 				<div className="col-lg-6">
 					<div className="contact_form_container">
 						<div className="contact_title">Login</div>
-						<form action="#" className="contact_form" id="contact_form">
+						<form action="#" className="contact_form" id="contact_form" onSubmit={ this.onSubmitLogin }>
 						<input type="text" className="contact_input" placeholder="Username" required="required" ref="username" name="username" onChange={ this.onChangeInput } />
 						<input type="password" className="contact_input" placeholder="Password" required="required" ref="password" name="password" onChange={ this.onChangeInput } />
-						<button className="contact_button" onClick={ this.onSubmitLogin } >Login</button>
+						<button type="submit" className="contact_button"  >Login</button>
 						</form>
 					</div>
 				</div>

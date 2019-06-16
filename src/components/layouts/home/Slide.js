@@ -19,7 +19,7 @@ class Slide extends Component {
                     <div className="home_content text-center">
                       <div className="home_subtitle">{media.title}</div>
                       <div className="home_title"><h1>{media.name}</h1></div>
-                      <div className="home_link"><a href="/#">Listen on Soundcloud</a></div>
+                      <div className="home_link"><a href="/#">View More</a></div>
                     </div>
                   </div>
                 </div>

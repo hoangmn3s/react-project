@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-import Home from './Home';
+// import Home from './Home';
 import LoginForm from './layouts/LoginForm';
-import {
-  Route, Redirect} from 'react-router-dom';
-  import { hashHistory } from 'react-router'
+
+
+
+// import {
+//   Route, Redirect, BrowserRouter as Router,} from 'react-router-dom';
 
 
 
@@ -29,31 +31,28 @@ class Login extends Component {
 	    }
   	}
 
-
 	onSubmitLogin = (loginUser) => {
-		var { userList } = this.state;
-		console.log(userList);
+		// var { userList } = this.state;
 		var loginAuth = this.loginAuth(loginUser);
 		if(loginAuth){
-			console.log('redirect');
-			// window.location.replace("/admin/user");
-
-			hashHistory.push('/registrationStep2')
-
-			{/*return <Redirect to='/admin/user' />*/}
+			window.location.href = "/admin/user";
+		}else{
+			alert('Fail CMNR!');
 		}
 
 	}
 	loginAuth(loginUser){
     	var { userList } = this.state;
     	var loginAuth = false;
+    	console.log(userList);
     	userList.forEach((userObj,index) => {
     		if(loginAuth === false){
-    			if(userObj.username === loginUser.username &&  userObj.password === loginUser.password ){
-        		loginAuth = true; 
-      			}
-      		}
-    		});
+    			if(userObj.username === loginUser.username && userObj.password === loginUser.password ){
+					if(userObj.status)
+    					return loginAuth = true;
+	      		}
+	      	}
+    	});
     	return loginAuth;
 	}
 

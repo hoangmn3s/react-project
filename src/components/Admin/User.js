@@ -19,7 +19,6 @@ class User extends Component {
 
   }
   componentWillMount(){
-    console.log(123);
 
     if(localStorage && localStorage.getItem('userList')){
       var userList = JSON.parse(localStorage.getItem('userList'));
@@ -99,14 +98,13 @@ class User extends Component {
 
   render() {
   var { userList, userEditing} = this.state ;// var userList = this.state.userList
-
     return (
     	<section id="admin-user">
         <div className="blog">
           <div className="container">
-            <div className="row gerenate">
+          {/*  <div className="row gerenate">
               <button type="submit" className="contact_button" onClick={ this.generateData } >Generate Data</button>
-            </div>
+            </div>*/}
             <div className="row">
               <UserTable 
                 userList={userList}  
@@ -120,8 +118,7 @@ class User extends Component {
                       <div className="row">Add New</div>
                     </div>
                     <div className="accordion_panel">
-                    <UserForm onSubmitUser={this.onSubmit} />
-                    
+                        <UserForm onSubmitUser={this.onSubmit} />
                     </div>
                   </div>
                 </div>
